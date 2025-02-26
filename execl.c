@@ -6,7 +6,7 @@ int main(int argc,char*argv[])
     if(id==0){
 
     printf("Before \n");
-    execl("/bin/ping","ping proess","-c","1","google.com",NULL);//pinging to infinite times
+    execl("/bin/ping","ping process","-c","1","google.com",NULL);//pinging to infinite times
     for(int i=0;i<100;i++)
     {
     printf("After\n");
