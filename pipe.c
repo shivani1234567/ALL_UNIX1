@@ -40,7 +40,7 @@ int main(int argc,char* argv[])
         {
           printf("Received from child that is writer is %d\n",brr[i]);
         }
-        close(a[0]);
+        close(a[0 ]);
    }
    return 0;
 }

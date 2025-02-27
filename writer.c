@@ -10,7 +10,7 @@ int main(int argc,char* argv[])
   int arr[10];
    srand(time(NULL));
     printf("Opening the file \n");
-    int a= open("sample_write.txt",O_RDWR);
+    int a= open("sample_write.txt",O_RDWR );
     if(a == -1)
     {
         printf("Unable to open\n");
