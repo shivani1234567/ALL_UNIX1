@@ -13,13 +13,17 @@ int main(int argc,char*argv[])
     {
       while(1){
        printf("I am inside child\n");
-       usleep(2000000);
+       usleep(1000000);
       }
     }
-   else
+   else 
     {
-        sleep(8);
-        kill(i,SIGKILL);/*here i needs pid of the process it needs o go and what  to do is second one*/
+        sleep(2);
+        kill(i,SIGSTOP);/*here i needs pid of the process it needs o go and what  to do is second one*/
+        sleep(4);
+        kill(i,SIGCONT);
+        sleep(2);
+        kill(i,SIGKILL);
         wait(NULL);
         printf("Hi from parent\n");
     }

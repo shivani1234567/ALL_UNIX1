@@ -1,0 +1,33 @@
+#include <unistd.h>
+#include<stdio.h>
+#include<sys/wait.h>
+#include<fcntl.h>
+#include<sys/types.h>
+#include<sys/stat.h>
+int main(int argc, char *argv[]) {
+    int id =fork();
+    if(id==-1)
+    {
+       printf("Unable to fork\n");
+       
+    }
+    else if(id==0)
+    {
+    int f1=open("Systemlogfile.txt",O_WRONLY |O_CREAT ,0666);
+    
+    dup2(f1,STDOUT_FILENO);
+    close(f1);
+    printf("Entering child\n");
+    int a=execlp("/bin/ping", "pinging","-c","3" ,"google.com", (char*)NULL);
+    printf("Child exited\n");
+    return a;
+    }
+    else{
+        int status;
+     wait(&status);   
+    printf("Entering parent success\n");
+    printf("Status value we recived from child is %d\n",status);
+
+    }
+    return 0;
+}
