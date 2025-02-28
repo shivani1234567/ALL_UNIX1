@@ -24,7 +24,7 @@ int main(int argc,char*argv[])
         kill(i,SIGCONT);
         sleep(2);
         kill(i,SIGKILL);
-        wait(NULL);
+        wait(NULL);  
         printf("Hi from parent\n");
     }
 }
