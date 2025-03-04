@@ -32,9 +32,11 @@
     } 
     
     amount-=50;
+    printf("Amount withdrawn is rs50 ,left is :%d\n",amount);
     pthread_mutex_unlock(&l);
+    
 }
-    printf("Value of amount after withdrawing rs50 is %d\n",amount); 
+    
     return NULL;
  }
  int main()
