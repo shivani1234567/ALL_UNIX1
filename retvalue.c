@@ -6,7 +6,7 @@ void* fun()
     int a=1;
     int *p =malloc(sizeof(int));
     *p=a;
-    return (void*)p;
+
 }
 int main()
 {

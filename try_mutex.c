@@ -3,6 +3,7 @@
 #include<unistd.h>
 #include<pthread.h>
 pthread_mutex_t shia;
+/*trylock is instant and lock is waiting always unless mutex is unlocked*/
 void* fun()
 {
   if( pthread_mutex_trylock(&shia)==0)
